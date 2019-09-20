@@ -19,9 +19,9 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.jdbc.Driver
 #        url: jdbc:mysql://localhost:3306/discern?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
-        url: jdbc:mysql://192.168.1.13:3306/discern?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
-        username: bjuser
-        password: bj123456
+        url: jdbc:mysql://127.0.0.1:3306/discern?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
+        username: root
+        password: 111111
         name: discern
         hikari:
 #        一个连接idle状态的最大时长（毫秒），超时则被释放（retired），缺省:10分钟
@@ -36,7 +36,7 @@ spring:
           max-lifetime: 1800000
 
     redis:
-         host: 192.168.1.13
+         host: 127.0.0.1
          port: 6379
          password:
       # 连接超时时间（毫秒）
@@ -86,31 +86,6 @@ server:
 # Shiro
 shiro:
     configLocation: classpath:/ehcache-shiro.xml
-#
-#eureka:
-#    instance:
-#        statusPageUrlPath: /info
-#        healthCheckUrlPath: /health
-#        # docker 部署开启
-#        prefer-ip-address: true
-#        ip-address: 127.0.0.1
-#    client:
-#        serviceUrl:
-#            defaultZone: http://localhost:8761/eureka/
-
-                    # docker 部署开启
-#            defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
-
-#client:
-#  bos:
-#    url: https://139.198.190.164:7073/dzjt-bos-rest
-
-# 必须配置
-#feign:
-#  httpclient:
-#    enabled: true
-#  okhttp:
-#    enabled: true
 
 ribbon:
   eureka:
@@ -139,19 +114,6 @@ swagger:
     service:
         name: Admin Back
         description: Admin Back后端服务
-#        developer: XT
-
-
-#auth:
-#  serviceId: uam-auth
-#  user:
-#    token-header: Authorization
-#  client:
-#    id: uam-admin
-#    secret: 123456
-#    token-header: client-token
-
-#redis-cache 相关
 
 logging:
     file: logs/application-crm.log
