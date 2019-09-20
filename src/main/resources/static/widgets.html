@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8" />
+	<title>长安大学交通BIM研究中心</title>
+	<meta name="description" content="SimpliQ - Flat & Responsive Bootstrap Admin Template." />
+	<meta name="author" content="Łukasz Holeczek" />
+	<meta name="keyword" content="SimpliQ, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" />
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- end: Mobile Specific -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-table.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-table.min.js"></script>
+	<script src="js/bootstrap-table-zh-CN.min.js"></script>
+	<!-- start: CSS -->
+
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+
+
+	<link href="css/style.min.css" rel="stylesheet" />
+	<link href="css/style-responsive.min.css" rel="stylesheet" />
+	<link href="css/retina.css" rel="stylesheet" />
+	<!-- end: CSS -->
+	
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!-- start: Favicon and Touch Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+	<link rel="shortcut icon" href="ico/favicon.png" />
+	<!-- end: Favicon and Touch Icons -->	
+		
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+		<!-- start: Header -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a id="main-menu-toggle" class="hidden-phone open"><i class="icon-reorder"></i></a>		
+				<div class="row-fluid">
+				<a class="brand span2" ><span>长安大学交通BIM研究中心</span></a>
+				</div>		
+				<!-- start: Header Menu -->
+				<div class="nav-no-collapse header-nav"></div>
+				<!-- end: Header Menu -->
+				
+			</div>
+		</div>
+	</div>
+	<!-- start: Header -->
+	
+		<div class="container-fluid-full">
+		<div class="row-fluid">
+				
+			<!-- start: Main Menu -->
+			<div id="sidebar-left" class="span2">
+				
+
+				<div class="nav-collapse sidebar-nav">
+					<ul class="nav nav-tabs nav-stacked main-menu" id="faceCompare">
+					</ul>
+				</div>
+			</div>
+			<!-- end: Main Menu -->
+						
+			<!-- start: Content -->
+			<div id="content" class="span10">
+				<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header" data-original-title="">
+						<h2><i class="icon-user"></i><span class="break"></span>人员管理</h2>
+
+						<div class="box-icon">
+							<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+						</div>
+
+					</div>
+					<button type="button"  id="myButton" style="margin-top: 5px;margin-bottom: 5px"  class=" btn btn-primary " >
+						新增用户
+					</button>
+					<input style="display: none" onchange="showImprotFile(event)" id="improtFile" type="file" placeholder="请选择文件..." />
+					<button type="button" onclick="
+						batchImport()"  style="margin-top: 5px;margin-bottom: 5px"  class=" btn btn-primary " >
+						批量导入
+					</button>
+					<button type="button" onclick="
+						batchExport()"  style="margin-top: 5px;margin-bottom: 5px"  class=" btn btn-primary " >
+						导出所有
+					</button>
+					单位:<input type="text"  style="margin-top: 10px"  id="search_departmentName" >
+					姓名:<input type="text"  style="margin-top: 10px"  id="search_nickName" >
+					手机号:<input type="text"  style="margin-top: 10px"  id="search_phone" >
+					签到状态:<input type="text"  style="margin-top: 10px"  id="search_isNotSign">
+					<button type="button"  onclick="searchButton()"   style="margin-top: 10px;margin-bottom: 10px;"  class=" btn btn-primary " >
+						搜索
+					</button>
+					<div class="box-content">
+						<table id="userTable" class="table table-striped table-bordered " >
+
+						</table>
+					</div>
+				</div><!--/span-->
+
+			</div>
+
+
+
+
+
+			<!-- end: Content -->
+				
+				</div><!--/fluid-row-->
+		<div class="clearfix"></div>
+
+			<!-------------------------------------------------新增用户对话框-->
+			<div class="modal fade hide" id="addUserModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="addUser">新增</h4>
+						</div>
+						<div class="modal-body">
+
+							<div class="form-group "  align="center">
+
+								<label for="nickname" >姓名&nbsp:&nbsp<input type="text"  name="txt_departmentname" class="form-control" id="nickname" ></label>
+							</div>
+							<div class="form-group"  align="center">
+
+								<label for="phone">&nbsp手机:&nbsp<input type="text" name="txt_parentdepartment" class="form-control" id="phone" ></label>
+							</div>
+							<div class="form-group"  align="center">
+
+								<label for="departmentName">&nbsp单位名:&nbsp<input type="text" name="txt_parentdepartment" class="form-control" id="departmentName" ></label>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+							<button type="button" onclick="addUserButton()" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>保存</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-------------------------------------------------新增用户对话框-->
+			<!-------------------------------------------------编辑用户对话框-->
+			<div class="modal fade hide" id="editUserModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="editUser">新增</h4>
+						</div>
+						<div class="modal-body">
+
+							<div class="form-group "  align="center">
+
+								<label for="nickname" >姓名&nbsp:&nbsp<input type="text"  name="txt_departmentname" class="form-control" id="editnickname" ></label>
+							</div>
+							<div class="form-group"  align="center">
+
+								<label for="phone">&nbsp手机:&nbsp<input type="text" name="txt_parentdepartment" class="form-control" id="editphone" ></label>
+							</div>
+							<div class="form-group"  align="center">
+
+							<label for="departmentName">&nbsp单位名:&nbsp<input type="text" name="txt_parentdepartment" class="form-control" id="editdepartmentName" ></label>
+						</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+							<button type="button" onclick="editUserButton()"  class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>保存</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="text" hidden="hidden" id="edituserId" >
+			<!-------------------------------------------------编辑用户对话框-->
+	</div><!--/.fluid-container-->
+
+	<!-- start: JavaScript-->
+		<!--<script src="js/jquery-1.10.2.min.js"></script>-->
+	<script src="js/jquery-migrate-1.2.1.min.js"></script>	
+		<script src="js/jquery-ui-1.10.3.custom.min.js"></script>	
+		<script src="js/jquery.ui.touch-punch.js"></script>	
+		<script src="js/modernizr.js"></script>	
+
+		<script src="js/jquery.cookie.js"></script>	
+		<script src='js/fullcalendar.min.js'></script>	
+		<script src='js/jquery.dataTables.min.js'></script>
+		<script src="js/excanvas.js"></script>
+	<script src="js/jquery.flot.js"></script>
+	<script src="js/jquery.flot.pie.js"></script>
+	<script src="js/jquery.flot.stack.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	<script src="js/jquery.flot.time.js"></script>
+
+		<script src="js/jquery.chosen.min.js"></script>
+		<script src="js/jquery.uniform.min.js"></script>
+		<script src="js/jquery.cleditor.min.js"></script>
+		<script src="js/jquery.noty.js"></script>
+		<script src="js/jquery.elfinder.min.js"></script>
+		<script src="js/jquery.raty.min.js"></script>
+		<script src="js/jquery.iphone.toggle.js"></script>
+		<script src="js/jquery.uploadify-3.1.min.js"></script>	
+		<script src="js/jquery.gritter.min.js"></script>	
+		<script src="js/jquery.imagesloaded.js"></script>	
+		<script src="js/jquery.masonry.min.js"></script>	
+		<script src="js/jquery.knob.modified.js"></script>	
+		<script src="js/jquery.sparkline.min.js"></script>
+		<script src="js/counter.min.js"></script>	
+		<script src="js/raphael.2.1.0.min.js"></script>
+	<script src="js/justgage.1.0.1.min.js"></script>	
+		<script src="js/jquery.autosize.min.js"></script>	
+		<script src="js/retina.js"></script>
+		<script src="js/jquery.placeholder.min.js"></script>
+		<script src="js/wizard.min.js"></script>
+		<script src="js/core.min.js"></script>	
+		<script src="js/charts.min.js"></script>	
+		<script src="js/custom.min.js"></script>
+	<!-- end: JavaScript-->
+	<script>
+        window.onload = function () {
+            var level = $.cookie("level");
+            var guanliyuan = "管理员";
+            if(guanliyuan==level){
+                $("#faceCompare").append('<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> 人员管理</span></a><li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> 退出登录</span></a></li>');
+            }else{
+                $("#faceCompare").append('<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> 人脸识别</span></a></li><li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> 退出登录</span></a></li>');
+            }
+
+        }
+		//新增用户
+		function addUserButton(){
+            var roleId = $("#role").val();
+            $.ajax({
+                type: "POST",
+                url: "/users/addUser/1",
+                data:{
+                    userId:$("#userId").val(),
+                    nickname:$("#nickname").val(),
+                    phone:$("#phone").val(),
+                    departmentName:$("#departmentName").val()
+       			 },
+                dataType: "json",
+                async: true,
+                timeout: 50000,
+                success: function(result){
+                    if(result.code==200){
+                        alert("新增成功");
+                        $('#userTable').bootstrapTable('refresh');
+                    }else{
+                        alert(result.msg);
+                    }
+                },
+                error: function(result){
+                    alert("新增失败");
+                }
+            });
+		}
+		//编辑用户（提交）
+		function editUserButton(){
+            var roleId = $("#editrole").val();
+            $.ajax({
+                type: "POST",
+                url: "/users/update/"+roleId,
+                data:{
+                    userId:$("#edituserId").val(),
+                nickname:$("#editnickname").val(),
+                phone:$("#editphone").val(),
+                departmentName:$("#editdepartmentName").val()
+
+       			 },
+                dataType: "json",
+                async: true,
+                timeout: 50000,
+                success: function(result){
+                    if(result.code==200){
+                        alert("修改成功");
+                        $('#userTable').bootstrapTable('refresh');
+                    }else{
+                        alert(result.msg);
+                    }
+                },
+                error: function(result){
+                    alert("修改失败");
+                }
+            });
+		}
+        //搜索方法
+        function searchButton() {
+            var opt = {
+                url: "/users/findByUserName",
+                silent: true,
+                query:{
+                    departmentName: $("#search_departmentName").val(),
+                    nickname:$("#search_nickName").val(),
+                    phone: $("#search_phone").val(),
+                    isNotSign: $("#search_isNotSign").val()
+                }
+            };
+            $('#userTable').bootstrapTable('refresh',opt);
+        }
+         //批量导入
+        function batchImport() {
+            $("#improtFile").click();
+
+        }
+         //批量导出
+        function batchExport(){
+            window.location.href = "/users/export"
+
+        }
+        //导入文件
+        function showImprotFile(e) {
+            $("#imgWait").show();
+            var formData = new FormData();
+            formData.append("file", document.getElementById("improtFile").files[0]);
+            var dom =$("#improtFile")[0];
+            console.info(dom);//这个是文件的路径
+            $.ajax({
+                url: "/users/import",
+                type: "POST",
+                data: formData,
+                /**
+                 *必须false才会自动加上正确的Content-Type
+                 */
+                contentType: false,
+                /**
+                 * 必须false才会避开jQuery对 formdata 的默认处理
+                 * XMLHttpRequest会对 formdata 进行正确的处理
+                 */
+                processData: false,
+                success: function (data) {
+                    if (data.code == 200) {
+                        alert(data.msg);
+                        $("#imgWait").hide();
+                        window.location.reload();
+                    }
+                    if (data.code == 500) {
+                        alert(data.msg);
+                    }
+
+                },
+                error: function () {
+                    alert("上传失败！");
+                    $("#imgWait").hide();
+                }
+            });
+
+        }
+		$(function () {
+            //加载角色下拉列表
+            $.post("/role/findByUserDepartment", {
+            },function (result) {
+                $("#role").append("<option value=''>---请选择---</option>");
+                for(var i=0;i<result.data.length;i++) {
+                    $("#role").append("<option value='"+result.data[i].id+"'>"+result.data[i].name+"("+result.data[i].desc+")</option>");
+                }
+            });
+            $.post("/role/findByUserDepartment", {
+            },function (result) {
+                $("#editrole").append("<option value=''>---请选择---</option>");
+                for(var i=0;i<result.data.length;i++) {
+                    $("#editrole").append("<option value='"+result.data[i].id+"'>"+result.data[i].name+"("+result.data[i].desc+")</option>");
+                }
+            });
+        })
+        $('#userTable').bootstrapTable({
+            url: 'users/findByUserName',
+            pagination: true,
+            pageSize: 20,
+            pageNumber:1,
+            pageList: [10, 20, 50, 100, 200, 500],  sidePagination:'server',
+            columns: [{
+                field: 'departmentName',
+                title: '单位名称',
+                align:"center"
+            },{
+                field: 'nickname',
+                title: '姓名',
+                align:"center"
+            },
+                {
+                    field: 'phone',
+                    title: '手机',
+                    align:"center"
+                },
+
+                {
+                    field: 'isNotSign',
+                    title: '签到状态',
+                    align:"center"
+                },
+				{
+                    field: 'userId',
+                    title: '操作',
+                    align:"center",
+                    formatter:function(value,row,index){
+
+                        //通过formatter可以自定义列显示的内容
+                        //value：当前field的值，即id
+                        //row：当前行的数据
+                        var a = '<button  class="btn btn-primary"  onclick="usersUpdate('+value+')">编辑</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button  class="btn btn-danger"  onclick="usersDelete('+value+')">删除</button>';
+                        return a;
+                    }
+                }]
+        });
+        $("#myButton").click(function () {
+                $("#addUser").text("新增");
+
+
+               $('#addUserModel').modal();
+		});
+        function  usersDelete(value) {
+             if(window.confirm('确认删除？')){
+                 $.post("/users/delete", {
+                     userId: value
+                 },function (result) {
+                     if(result.code==200){
+                         alert("删除成功");
+                         $('#userTable').bootstrapTable('refresh');
+                     }else{
+                         alert("删除失败");
+                     }
+                 });
+			}
+
+        }
+        function  usersUpdate( userId) {
+            $.ajax({
+                type: "POST",
+                url: "/users/findById",
+                data: {
+                    userId: userId
+                },
+                success: function (result) {
+                    var user = result.user;
+                        $("#editnickname").val(user.nickname);
+                        $("#editphone").val(user.phone);
+                        $("#editdepartmentName").val(user.departmentName);
+                        $("#edituserId").val(user.userId);
+                    	//选中该用户对应的角色
+                        $('#editUserModel').modal();
+                },
+                error: function (result) {
+                    alert("没有编辑权限");
+                }
+            });
+        }
+
+	</script>
+</div>
+
+		<footer>
+			<p>
+			</p>
+		</footer>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8" />
+	<title>长安大学交通BIM研究中心</title>
+	<meta name="description" content="SimpliQ - Flat & Responsive Bootstrap Admin Template." />
+	<meta name="author" content="Łukasz Holeczek" />
+	<meta name="keyword" content="SimpliQ, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" />
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="css/style.min.css" rel="stylesheet" />
+	<link href="css/style-responsive.min.css" rel="stylesheet" />
+	<link href="css/retina.css" rel="stylesheet" />
+	<!-- end: CSS -->
+	
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+
+	<!-- start: Favicon and Touch Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+	<link rel="shortcut icon" href="ico/favicon.png" />
+	<!-- end: Favicon and Touch Icons -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+		<!-- start: Header -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a id="main-menu-toggle" class="hidden-phone open"><i class="icon-reorder"></i></a>		
+				<div class="row-fluid">
+				<a class="brand span2" ><span>长安大学交通BIM研究中心</span></a>
+				</div>
+				<!-- start: Header Menu -->
+				<div class="nav-no-collapse header-nav"></div>
+				<!-- end: Header Menu -->
+				
+			</div>
+		</div>
+	</div>
+	<!-- start: Header -->
+	
+		<div class="container-fluid-full">
+		<div class="row-fluid">
+				
+			<!-- start: Main Menu -->
+			<div id="sidebar-left" class="span2">
+				
+
+				<div class="nav-collapse sidebar-nav">
+					<ul class="nav nav-tabs nav-stacked main-menu" id="faceCompare">
+					</ul>
+				</div>
+			</div>
+			<!-- end: Main Menu -->
+						
+			<!-- start: Content -->
+			<div id="content" class="span10">
+
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="icon-edit"></i>请输入以下信息进行识别</h2>
+						<div class="box-icon">
+							<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<div class="form-horizontal" />
+							<fieldset>
+							  <div class="control-group">
+								<label class="control-label" >姓名</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="name" size="16" type="text" />
+								  </div>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" >年龄</label>
+								<div class="controls">
+								  <div class="input-prepend">
+									<input id="age" size="16" type="text" />
+								  </div>
+								</div>
+							  </div>
+
+							  <div class="control-group">
+								<label class="control-label">性别</label>
+								<div class="controls">
+								  <label class="btn btn-primary ">
+									<input name="sex" type="radio" id="sex" value="男" /> 男
+								  </label>
+								  <label class="btn btn-primary">
+									<input name="sex" type="radio" id="sex1" value="女" /> 女
+								  </label>
+								  <label class="btn btn-primary">
+									<input name="sex" type="radio" id="sex2" value="保密" /> 保密
+								  </label>
+								</div>
+							  </div>
+								<div class="control-group">
+									<!--<label class="control-label" >年龄</label>-->
+									<div class="controls">
+										<div class="input-prepend">
+											<img id="uploadFile" src="" width="200px" height="200px">
+										</div>
+									</div>
+								</div>
+							  <div class="control-group">
+								<label class="control-label">选择图片</label>
+								<div class="controls">
+								  <input style="display: none" onchange="showFile(event)" id="imgFile" type="file" placeholder="请选择文件..." />
+									<button class="btn btn-primary" onclick="clickFileInput()">上传照片</button> </span>
+									<button class="btn btn-primary" onclick="snapshot()">抓拍照片</button> </span>
+								</div>
+							  </div>
+								<div class="control-group">
+									<label class="control-label" >自动抓拍时间间隔（秒）</label>
+									<div class="controls">
+										<div class="input-prepend">
+											<input id="autoTime" size="16" type="text" />
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="controls">
+									  <button class="btn btn-primary" onclick="autosnapshot()">开始自动抓拍照片</button> </span>
+									  <button class="btn btn-primary" onclick="stopautosnapshot()">停止自动抓拍照片</button> </span>
+								    </div>
+							  </div>
+
+
+							  <div class="form-actions">
+
+								<button onclick="checked()"  class="btn btn-primary">检测</button>
+							  </div>
+							</fieldset>
+						</div>
+					<div class="form-horizontal" />
+					<div id="schedule" style="display:none" class="progress progress-striped">
+						<div id="scheduleWidth" class="bar" style="width: 10%;"></div>
+					</div>
+				</div>
+					</div>
+
+
+			</div><!--/row-->
+				<div class="row-fluid sortable">
+					<div class="box span6">
+						<div class="box-header">
+							<h2><i class="icon-list-alt"></i><span class="break"></span>检测对象</h2>
+							<div class="box-icon">
+								<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+								<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+							</div>
+						</div>
+						<div class="box-content" >
+							<div class="box span6">
+							<img id="oldData" src="" >
+							</div>
+							<div class="box span6">
+								<div class="box-content">
+									姓名: <span id="oldName"></span>
+								</div>
+								<div class="box-content">
+									年龄: <span id="oldAge"></span>
+								</div>
+								<div class="box-content">
+									性别: <span id="oldSex"></span>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="box span6">
+						<div class="box-header" data-original-title="">
+							<h2><i class="icon-list-alt"></i><span class="break"></span>检测结果</h2>
+							<div class="box-icon">
+								<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+								<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+							</div>
+						</div>
+						<div class="box-content">
+							<div class="box span6">
+							<img id="newData" src="" >
+							</div>
+							<div class="box span6">
+								<div class="box-content">
+									姓名: <span id="newName"></span>
+								</div>
+								<div class="box-content">
+									年龄: <span id="newAge"></span>
+								</div>
+								<div class="box-content">
+									性别: <span id="newSex"></span>
+								</div>
+								<div class="box-content">
+									相似率: <span id="compareResult"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!-- end: Content -->
+				
+				</div><!--/fluid-row-->
+				
+		<div class="modal hide fade" id="myModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Settings</h3>
+			</div>
+			<div class="modal-body">
+				<p>Here settings can be configured...</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-primary">Save changes</a>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+
+	</div><!--/.fluid-container-->
+
+			<!-- start: JavaScript-->
+		<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery-migrate-1.2.1.min.js"></script>	
+		<script src="js/jquery-ui-1.10.3.custom.min.js"></script>	
+		<script src="js/jquery.ui.touch-punch.js"></script>	
+		<script src="js/modernizr.js"></script>	
+		<script src="js/bootstrap.min.js"></script>	
+		<script src="js/jquery.cookie.js"></script>	
+		<script src='js/fullcalendar.min.js'></script>	
+		<script src='js/jquery.dataTables.min.js'></script>
+		<script src="js/excanvas.js"></script>
+	<script src="js/jquery.flot.js"></script>
+	<script src="js/jquery.flot.pie.js"></script>
+	<script src="js/jquery.flot.stack.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	<script src="js/jquery.flot.time.js"></script>
+		
+		<script src="js/jquery.chosen.min.js"></script>	
+		<script src="js/jquery.uniform.min.js"></script>		
+		<script src="js/jquery.cleditor.min.js"></script>	
+		<script src="js/jquery.noty.js"></script>	
+		<script src="js/jquery.elfinder.min.js"></script>	
+		<script src="js/jquery.raty.min.js"></script>	
+		<script src="js/jquery.iphone.toggle.js"></script>	
+		<script src="js/jquery.uploadify-3.1.min.js"></script>	
+		<script src="js/jquery.gritter.min.js"></script>	
+		<script src="js/jquery.imagesloaded.js"></script>	
+		<script src="js/jquery.masonry.min.js"></script>	
+		<script src="js/jquery.knob.modified.js"></script>	
+		<script src="js/jquery.sparkline.min.js"></script>	
+		<script src="js/counter.min.js"></script>	
+		<script src="js/raphael.2.1.0.min.js"></script>
+	<script src="js/justgage.1.0.1.min.js"></script>	
+		<script src="js/jquery.autosize.min.js"></script>	
+		<script src="js/retina.js"></script>
+		<script src="js/jquery.placeholder.min.js"></script>
+		<script src="js/wizard.min.js"></script>
+		<script src="js/core.min.js"></script>	
+		<script src="js/charts.min.js"></script>	
+		<script src="js/custom.min.js"></script>
+		</div>
+		<footer >
+			<p>
+			</p>
+
+		</footer>
+</body>
+	<!-- end: JavaScript-->
+		<script>
+
+var base64;
+		/*	function showFile() {
+                console.info($("#imgFile"));
+				$("#uploadFile").attr("src","");
+            }*/
+window.onload = function () {
+    var level = $.cookie("level");
+    var guanliyuan = "管理员";
+    if(guanliyuan==level){
+        $("#faceCompare").append('<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> 人员管理</span></a></li><li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> 退出登录</span></a></li>');
+    }else{
+        $("#faceCompare").append('<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> 人脸识别</span></a></li><li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> 退出登录</span></a></li>');
+    }
+
+}
+            function showFile(e) {
+                var dom =$("#imgFile")[0];
+                console.info(dom.value);//这个是文件的路径
+                var reader = new FileReader();
+                reader.onload = (function (file) {
+                    return function (e) {
+                        base64=this.result;
+                         // alert(this.result); //这个就是base64的数据了
+                        var sss=$("#showImage");
+                        $("#uploadFile")[0].src=this.result;
+                    };
+                })(e.target.files[0]);
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        function checked(value) {
+   /*         $.post("/discern/compare", {
+                name: $("#name").val(),
+				age:$("#age").val(),
+				sex:$("input[type=radio]:checked").val(),
+                face:base64
+
+			},function (result) {
+                var str = (result.results.score)+"";
+                console.info(str);
+               var score =  str.slice(0,5);
+                $("#oldData")[0].src=result.oldData.face;
+				$("#oldName").text(result.oldData.name);
+				$("#oldAge").text(result.oldData.age);
+				$("#oldSex").text(result.oldData.sex);
+
+                $("#newData")[0].src=result.results.baseface.face;
+				$("#newName").text(result.results.baseface.name);
+				$("#newAge").text(result.results.baseface.age);
+				$("#newSex").text(result.results.baseface.sex);
+				$("#compareResult").text(score+"%");
+            });*/
+            $.ajax({
+                url: "/discern/compare",
+				type:"POST",
+                data: {
+                    name: $("#name").val(),
+                    age:$("#age").val(),
+                    sex:$("input[type=radio]:checked").val(),
+                    face:base64
+                },
+                success: function (result) {
+                    if(result.code==500&&value!="auto"){
+                        alert("在该图片中检测不到人脸");
+					}
+                    var str = (result.results.score)+"";
+                    console.info(str);
+                    var score =  str.slice(0,5);
+                    $("#oldData")[0].src=result.oldData.face;
+                    $("#oldName").text(result.oldData.name);
+                    $("#oldAge").text(result.oldData.age);
+                    $("#oldSex").text(result.oldData.sex);
+
+                    $("#newData")[0].src=result.results.baseface.face;
+                    $("#newName").text(result.results.baseface.name);
+                    $("#newAge").text(result.results.baseface.age);
+                    $("#newSex").text(result.results.baseface.sex);
+                    $("#compareResult").text(score+"%");
+                },
+                error: function (result) {
+                    if(value!="auto") {
+                        alert("在图片中检测不到人脸");
+                    }
+                }
+            });
+
+        }
+        function clickFileInput() {
+			$("#imgFile").click();
+        }
+		var t1;
+		function stopautosnapshot() {
+            window.clearInterval(t1);
+
+        }
+        //开始自动抓拍
+		function autosnapshot() {
+		    if($("#autoTime").val()==undefined||$("#autoTime").val()==null||$("#autoTime").val()==""){
+		        alert("请输入自动抓拍时间间隔！");
+			}else {
+                t1 = window.setInterval(function () {
+                    $("#schedule").css("display", "block");
+                    var t2 = window.setInterval("progressBar()", 3000);
+                    $.ajax({
+                        url: "/discern/snapshot",
+                        data: {},
+                        success: function (result) {
+                            $("#schedule").css("display", "none");
+                            clearTimeout(t2);
+                            base64 = "data:image/png;base64," + result.snapshot;
+                            $("#uploadFile")[0].src = base64;
+                            //开始检测
+                            checked("auto");
+                        },
+                        error: function (result) {
+                            $("#schedule").css("display", "none");
+                            clearTimeout(t2);
+                            alert("没有权限");
+                        }
+                    });
+                }, 1000 * $("#autoTime").val());
+            }
+		}
+        //抓拍事件
+        function snapshot() {
+			$("#schedule").css("display","block");
+            var t2 = window.setInterval("progressBar()",3000);
+
+            $.ajax({
+                url: "/discern/snapshot",
+                data: {
+                },
+                success: function (result) {
+                    $("#schedule").css("display","none");
+                    clearTimeout(t2);
+                    base64="data:image/png;base64,"+result.snapshot;
+                    $("#uploadFile")[0].src=base64;
+                },
+                error: function (result) {
+                    $("#schedule").css("display","none");
+                    clearTimeout(t2);
+                    alert("没有权限");
+                }
+            });
+        }
+		function progressBar(){
+		console.info($("#scheduleWidth").width()+1);
+            $("#scheduleWidth").width($("#scheduleWidth").width()+1+"%");
+         }
+		</script>
+
+
+</html>

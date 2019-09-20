@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8" />
+	<title>长安大学交通BIM研究中心</title>
+	<meta name="description" content="SimpliQ - Flat & Responsive Bootstrap Admin Template." />
+	<meta name="author" content="Łukasz Holeczek" />
+	<meta name="keyword" content="SimpliQ, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" />
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="css/style.min.css" rel="stylesheet" />
+	<link href="css/style-responsive.min.css" rel="stylesheet" />
+	<link href="css/retina.css" rel="stylesheet" />
+	<link href="css/pagination.css" rel="stylesheet" />
+	<link href="css/reset.css" rel="stylesheet" />
+	<link href="css/highlight.min.css" rel="stylesheet" />
+	<link href="css/common.css" rel="stylesheet" />
+	<!-- end: CSS -->
+
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!-- start: Favicon and Touch Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+	<link rel="shortcut icon" href="ico/favicon.png" />
+	<!-- end: Favicon and Touch Icons -->	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+
+<div class="modal fade hide " id="openImageHistory"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  style="width:800px;margin-top: 50px">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="box-content">
+					<div class="box span3" style="height: 280px;width: 100px">
+						<div class="box-content">
+							姓名: <span id="oldName"></span>
+						</div>
+						<div class="box-content">
+							年龄: <span id="oldAge"></span>
+						</div>
+						<div class="box-content">
+							性别: <span id="oldSex"></span>
+						</div>
+					</div>
+					<div class="box span3" style="height: 280px">
+						<div class="box-content">
+					<img id="imageHistory" src="" width="250px" height="250px">
+						</div>
+					</div>
+					<div class="box span3" style="height: 280px;width: 100px">
+						<div class="box-content">
+							姓名: <span id="newName"></span>
+						</div>
+						<div class="box-content">
+							年龄: <span id="newAge"></span>
+						</div>
+						<div class="box-content">
+							性别: <span id="newSex"></span>
+						</div>
+						<div class="box-content">
+							相似率: <span id="compareResult"></span>
+						</div>
+
+					</div>
+				<div class="box span3 " style="height: 280px">
+					<div class="box-content">
+					<img id="baseimageHistory" src="" width="250px" height="250px">
+					</div>
+				</div>
+				</div>
+
+			</div>
+			<div class="modal-footer" >
+				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-------------------------------------------------openImage底库对话框-->
+<!--<div style="height: 1px"></div>-->
+		<!-- start: Header -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a id="main-menu-toggle" class="hidden-phone open"><i class="icon-reorder"></i></a>		
+				<div class="row-fluid">
+				<a class="brand span2"><span>长安大学交通BIM研究中心</span></a>
+				</div>		
+				<!-- start: Header Menu -->
+				<div class="nav-no-collapse header-nav"></div>
+				<!-- end: Header Menu -->
+				
+			</div>
+		</div>
+	</div>
+	<!-- start: Header -->
+	
+		<div class="container-fluid-full">
+		<div class="row-fluid">
+				
+			<!-- start: Main Menu -->
+			<div id="sidebar-left" class="span2">
+				
+
+				<div class="nav-collapse sidebar-nav">
+					<ul class="nav nav-tabs nav-stacked main-menu" id="faceCompare">
+
+					</ul>
+				</div>
+			</div>
+			<!-- end: Main Menu -->
+						
+			<!-- start: Content -->
+			<div id="content" class="span10" >
+			
+			
+			<div class="row-fluid sortable" >
+				<div class="box span12" >
+					<div class="box-header" data-original-title="">
+						<h2><i class="icon-picture"></i><span class="break"></span> 最近检测历史 </h2>
+						<div class="box-icon">
+							<a href="#" id="toggle-fullscreen" class="hidden-phone hidden-tablet"><i class="icon-fullscreen"></i></a>
+							<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+
+					<div class="box-content" >
+
+						<div id="history" disabled="true" class="masonry-gallery"  >
+
+														<div id="1" class="masonry-thumb"  style="height: 150px;width: 150px" >
+								<a   ><img class="grayscale"  height="150px" width="150px"/></a>
+							</div>
+														<div id="2" class="masonry-thumb"  style="height: 150px;width: 150px">
+								<a  ><img class="grayscale"  height="150px" width="150px"  /></a>
+							</div>
+														<div id="3" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+														<div id="4" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+														<div id="5" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+														<div id="6" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a ><img class="grayscale"   height="150px" width="150px"/></a>
+							</div>
+														<div id="7" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a title="Sample Image 7" ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+														<div id="8" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 8" ><img class="grayscale"   height="150px" width="150px" /></a>
+							</div>
+														<div id="9" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 9" ><img class="grayscale"   height="150px" width="150px"/></a>
+							</div>
+														<div id="10" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 10" ><img class="grayscale"  height="150px" width="150px"/></a>
+							</div>
+														<div id="11" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 11" ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+														<div id="12" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 12" ><img class="grayscale"   height="150px" width="150px"/></a>
+							</div>
+														<div id="13" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 13" ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+							<div id="1121" class="masonry-thumb"  style="height: 150px;width: 150px" >
+								<a   ><img class="grayscale"  height="150px" width="150px"/></a>
+							</div>
+							<div id="21" class="masonry-thumb"  style="height: 150px;width: 150px">
+								<a  ><img class="grayscale"  height="150px" width="150px"  /></a>
+							</div>
+							<div id="31" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+							<div id="41" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+							<div id="51" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+							<div id="61" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a ><img class="grayscale"   height="150px" width="150px"/></a>
+							</div>
+							<div id="17" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a title="Sample Image 7" ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+							<div id="18" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 8" ><img class="grayscale"   height="150px" width="150px" /></a>
+							</div>
+							<div id="91" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 9" ><img class="grayscale"   height="150px" width="150px"/></a>
+							</div>
+							<div id="1110" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 10" ><img class="grayscale"  height="150px" width="150px"/></a>
+							</div>
+							<div id="111" class="masonry-thumb" style="height: 150px;width: 150px">
+								<a  title="Sample Image 11" ><img class="grayscale"    height="150px" width="150px"/></a>
+							</div>
+													</div>
+					</div>
+				</div><!--/span-->
+
+			</div><!--/row-->
+				<div class="eg" >
+					<div class="m-style M-box" ></div>
+				</div>
+
+			</div>
+			<!-- end: Content -->
+				
+				</div><!--/fluid-row-->
+				
+		<div class="modal hide fade" id="myModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Settings</h3>
+			</div>
+			<div class="modal-body">
+				<p>Here settings can be configured...</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-primary">Save changes</a>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+		
+		<footer>
+			<p>
+			</p>
+
+		</footer>
+				
+	</div><!--/.fluid-container-->
+		<script>
+			var total = 13;
+			var pageSize = 24;
+            window.onload = function(){
+
+          /*      $.post("/discern/findLocalHistory", {},function (result) {
+                    console.info(result.data.length);
+                    if(result.data.length==0){
+                        $("#history").hide();
+					}else{
+                        $("img[class=grayscale]").each(function (n, val) {
+                                console.info(n);
+                                console.info(result.data[n].face);
+                                console.info(val);
+                                val.src=result.data[n].face;
+                            }
+
+                        )
+                    }
+
+                });*/
+
+                $.ajax({
+                    type: "POST",
+                    url: "/discern/findLocalHistory",
+                    data: {
+                        pageNumber : 0
+					},
+                    success: function (result) {
+                        total = result.total;
+                        $('.M-box').pagination({
+                            totalData:total,
+                            showData:pageSize,
+                            jump: true,
+                            coping: true,
+                            homePage: '首页',
+                            endPage: '末页',
+                            callback: function (api) {
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/discern/findLocalHistory",
+                                    data: {
+                                        pageNumber : api.getCurrent()-1
+                                    },
+                                    success: function (result) {
+                                        total = result.total;
+                                        if(result.data.length==0){
+                                            $("#history").hide();
+
+                                        }else{
+                                            $("img[class=grayscale]").click(function () {
+                                                for(var i = 0;i<result.data.length;i++){
+                                                    if(result.data[i].id==this.id){
+                                                        // console.info(result.data[i]);
+                                                        $("#oldName").text(result.data[i].name);
+                                                        $("#oldAge").text(result.data[i].age);
+                                                        $("#oldSex").text(result.data[i].sex);
+
+                                                        $("#newName").text(result.data[i].baseName);
+                                                        $("#newAge").text(result.data[i].baseAge);
+                                                        $("#newSex").text(result.data[i].baseSex);
+                                                        $("#compareResult").text(result.data[i].similarity+"%");
+                                                        $("#imageHistory").attr("src",result.data[i].face);
+                                                        $("#baseimageHistory").attr("src",result.data[i].baseFace);
+                                                    }
+                                                }
+                                                $('#openImageHistory').modal({
+                                                    backdrop: false
+                                                });
+                                            });
+                                            $("img[class=grayscale]").each(function (n, val) {
+                                                    // console.info(n);
+                                                    // console.info(result.data[n].face);
+                                                    console.info(result.data.length);
+                                                    console.info(n);
+                                                    if(result.data.length>n){
+                                                        val.src=result.data[n].face;
+                                                        val.id = result.data[n].id;
+                                                        // console.info(val);
+                                                    }else{
+                                                        val.src="";
+                                                        val.id = "";
+                                                    }
+                                                }
+
+
+                                            );
+
+
+                                        }
+
+                                    },
+                                    error: function (result) {
+                                        $("#history").hide();
+                                    }
+                                });
+                            }
+                        }, function (api) {
+                        });
+                        if(result.data.length==0){
+                            $("#history").hide();
+
+                        }else{
+                            $("img[class=grayscale]").click(function () {
+                                for(var i = 0;i<result.data.length;i++){
+                                    if(result.data[i].id==this.id){
+                                        // console.info(result.data[i]);
+                                        $("#oldName").text(result.data[i].name);
+                                        $("#oldAge").text(result.data[i].age);
+                                        $("#oldSex").text(result.data[i].sex);
+
+                                        $("#newName").text(result.data[i].baseName);
+                                        $("#newAge").text(result.data[i].baseAge);
+                                        $("#newSex").text(result.data[i].baseSex);
+                                        $("#compareResult").text(result.data[i].similarity+"%");
+                                        $("#imageHistory").attr("src",result.data[i].face);
+                                        $("#baseimageHistory").attr("src",result.data[i].baseFace);
+									}
+								}
+                                $('#openImageHistory').modal({
+                                    backdrop: false
+								});
+                            });
+                            $("img[class=grayscale]").each(function (n, val) {
+                                    // console.info(n);
+                                    // console.info(result.data[n].face);
+                                    val.src=result.data[n].face;
+                                val.id = result.data[n].id;
+                                    // console.info(val);
+                                }
+
+
+                            );
+
+
+                        }
+
+                    },
+                    error: function (result) {
+                        $("#history").hide();
+                    }
+                });
+
+                    var level = $.cookie("level");
+                    var guanliyuan = "管理员";
+                    if(guanliyuan==level){
+                        $("#faceCompare").append('<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> 人员管理</span></a></li><li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> 退出登录</span></a></li>');
+                    }else{
+                        $("#faceCompare").append('<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> 人脸识别</span></a></li><li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> 退出登录</span></a></li>');
+                    }
+
+
+			}
+
+		</script>
+	<!-- start: JavaScript-->
+		<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery-migrate-1.2.1.min.js"></script>	
+		<script src="js/jquery-ui-1.10.3.custom.min.js"></script>	
+		<script src="js/jquery.ui.touch-punch.js"></script>	
+		<script src="js/modernizr.js"></script>	
+		<script src="js/bootstrap.min.js"></script>	
+		<script src="js/jquery.cookie.js"></script>	
+		<script src='js/fullcalendar.min.js'></script>	
+		<script src='js/jquery.dataTables.min.js'></script>
+		<script src="js/excanvas.js"></script>
+<script src="js/jquery.pagination.js"></script>
+	<script src="js/jquery.flot.js"></script>
+	<script src="js/jquery.flot.pie.js"></script>
+	<script src="js/jquery.flot.stack.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	<script src="js/jquery.flot.time.js"></script>
+		
+		<script src="js/jquery.chosen.min.js"></script>	
+		<script src="js/jquery.uniform.min.js"></script>		
+		<script src="js/jquery.cleditor.min.js"></script>	
+		<script src="js/jquery.noty.js"></script>	
+		<script src="js/jquery.elfinder.min.js"></script>	
+		<script src="js/jquery.raty.min.js"></script>	
+		<script src="js/jquery.iphone.toggle.js"></script>	
+		<script src="js/jquery.uploadify-3.1.min.js"></script>	
+		<script src="js/jquery.gritter.min.js"></script>	
+		<script src="js/jquery.imagesloaded.js"></script>	
+		<script src="js/jquery.masonry.min.js"></script>	
+		<script src="js/jquery.knob.modified.js"></script>	
+		<script src="js/jquery.sparkline.min.js"></script>	
+		<script src="js/counter.min.js"></script>	
+		<script src="js/raphael.2.1.0.min.js"></script>
+	<script src="js/justgage.1.0.1.min.js"></script>	
+		<script src="js/jquery.autosize.min.js"></script>	
+		<!--<script src="js/retina.js"></script>-->
+		<script src="js/jquery.placeholder.min.js"></script>
+		<script src="js/wizard.min.js"></script>
+		<script src="js/core.min.js"></script>	
+		<script src="js/charts.min.js"></script>	
+		<script src="js/custom.min.js"></script>
+	<!-- end: JavaScript-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+spring:
+  profiles:
+    active: local
+  mvc:
+    static-path-pattern: /**
+    view:
+      suffix: .html
+      prefix:
+  resources:
+    static-locations: classpath:/static/
+
+---
+#For local environment
+spring:
+    profiles: local
+    application:
+        name: discern
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+#        url: jdbc:mysql://localhost:3306/discern?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
+        url: jdbc:mysql://192.168.1.13:3306/discern?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&autoReconnect=true
+        username: bjuser
+        password: bj123456
+        name: discern
+        hikari:
+#        一个连接idle状态的最大时长（毫秒），超时则被释放（retired），缺省:10分钟
+          idle-timeout: 600000
+#          连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
+          maximum-pool-size: 60
+          minimum-idle: 10
+          connection-test-query: SELECT 1
+#          等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 缺省:30秒
+          connection-timeout: 30000
+#          一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒，参考MySQL wait_timeout参数（show variables like '%timeout%';）
+          max-lifetime: 1800000
+
+    redis:
+         host: 192.168.1.13
+         port: 6379
+         password:
+      # 连接超时时间（毫秒）
+         timeout: 10000ms
+         jedis:
+           pool:
+            # 连接池最大连接数（使用负值表示没有限制）
+             max-active: 8
+            #连接池最大空闲连接数，负数表示不限制
+             max-idle: 8
+             #连接池最小空闲连接数
+             min-idle: 0
+             # 连接池最大阻塞等待时间（使用负值表示没有限制）
+             max-wait: -1ms
+
+    pool:
+          max-idle: 20
+          min-idle: 5
+          max-active: 20
+          max-wait: 2
+
+    jpa:
+          show-sql: true
+          hibernate:
+              ddl-auto: update
+          properties:
+                hibernate:
+                  dialect: com.discern.discern.utils.DB_Charset
+
+
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        default-property-inclusion: non_null
+
+    zipkin:
+        enabled: true
+
+    sleuth:
+      sampler:
+        percentage: 1
+
+
+server:
+    port: 80
+
+# Shiro
+shiro:
+    configLocation: classpath:/ehcache-shiro.xml
+#
+#eureka:
+#    instance:
+#        statusPageUrlPath: /info
+#        healthCheckUrlPath: /health
+#        # docker 部署开启
+#        prefer-ip-address: true
+#        ip-address: 127.0.0.1
+#    client:
+#        serviceUrl:
+#            defaultZone: http://localhost:8761/eureka/
+
+                    # docker 部署开启
+#            defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+
+#client:
+#  bos:
+#    url: https://139.198.190.164:7073/dzjt-bos-rest
+
+# 必须配置
+#feign:
+#  httpclient:
+#    enabled: true
+#  okhttp:
+#    enabled: true
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 120000
+  ConnectTimeout: 120000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 1000 ##并发执行的最大线程数，默认10
+      maxQueueSize: 1000 ##BlockingQueue的最大队列数
+      queueSizeRejectionThreshold: 500 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 110000
+
+swagger:
+    basepackage: com.bj.bjcrm
+    service:
+        name: Admin Back
+        description: Admin Back后端服务
+#        developer: XT
+
+
+#auth:
+#  serviceId: uam-auth
+#  user:
+#    token-header: Authorization
+#  client:
+#    id: uam-admin
+#    secret: 123456
+#    token-header: client-token
+
+#redis-cache 相关
+
+logging:
+    file: logs/application-crm.log
+    pattern:
+      console: "%d %-5level %logger : %msg%n"
+      file: "%d %-5level [%thread] %logger : %msg%n"
+    level:
+#        tk.mybatis: DEBUG
+        com.dzjt.cbs.uam.security.admin: DEBUG
+
+facehost:
+        host: "http://192.168.1.6:8000"

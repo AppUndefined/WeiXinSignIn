@@ -1,0 +1,422 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.3.RELEASE)
+
+2019-09-20 14:06:46,691 INFO  com.discern.discern.DiscernApplication : Starting DiscernApplication v0.0.1-SNAPSHOT on bj-dev-server with PID 10375 (/www/discern-0.0.1-SNAPSHOT.jar started by root in /www)
+2019-09-20 14:06:46,704 INFO  com.discern.discern.DiscernApplication : The following profiles are active: local
+2019-09-20 14:06:46,806 INFO  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@73f792cf: startup date [Fri Sep 20 14:06:46 CST 2019]; root of context hierarchy
+2019-09-20 14:06:49,681 INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory : Overriding bean definition for bean 'dataSource' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Generic; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Generic.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]]
+2019-09-20 14:06:49,754 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-20 14:06:49,973 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-20 14:06:50,007 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.discern.discern.dao.FaceJpaDao.
+2019-09-20 14:06:50,010 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.discern.discern.dao.FunctionJpaDao.
+2019-09-20 14:06:50,011 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.discern.discern.dao.RoleJpaDao.
+2019-09-20 14:06:50,012 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.discern.discern.dao.UserJpaDao.
+2019-09-20 14:06:50,049 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-20 14:06:50,102 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data Solr - Could not safely identify store assignment for repository candidate interface com.discern.discern.dao.FaceJpaDao.
+2019-09-20 14:06:50,104 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data Solr - Could not safely identify store assignment for repository candidate interface com.discern.discern.dao.FunctionJpaDao.
+2019-09-20 14:06:50,104 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data Solr - Could not safely identify store assignment for repository candidate interface com.discern.discern.dao.RoleJpaDao.
+2019-09-20 14:06:50,105 INFO  org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport : Spring Data Solr - Could not safely identify store assignment for repository candidate interface com.discern.discern.dao.UserJpaDao.
+2019-09-20 14:06:51,339 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$15b60be5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:51,536 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4f4a4db7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:51,673 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.discern.discern.config.RedisConfig$$EnhancerBySpringCGLIB$$c6f147be] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:51,828 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.jedis.JedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:51,834 INFO  com.discern.discern.config.RedisConfig : ------------------------------------------
+2019-09-20 14:06:51,835 INFO  com.discern.discern.config.RedisConfig : -----------------local redis--------------
+2019-09-20 14:06:51,835 INFO  com.discern.discern.config.RedisConfig : ------------------------------------------
+2019-09-20 14:06:51,898 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'redisTemplate' of type [org.springframework.data.redis.core.RedisTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:51,914 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'redisSessionDao' of type [com.discern.discern.dao.RedisSessionDao] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:51,917 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.discern.discern.config.ShiroConfig$$EnhancerBySpringCGLIB$$7c22c074] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:51,940 INFO  org.apache.shiro.spring.web.ShiroFilterFactoryBean : hashedCredentialsMatcher()
+2019-09-20 14:06:51,969 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:51,994 INFO  org.springframework.cache.ehcache.EhCacheManagerFactoryBean : Initializing EhCache CacheManager
+2019-09-20 14:06:52,007 WARN  net.sf.ehcache.config.ConfigurationFactory : No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/www/discern-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/ehcache-2.8.3.jar!/ehcache-failsafe.xml
+2019-09-20 14:06:52,372 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'ehCacheManagerFactoryBean2' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,374 INFO  org.apache.shiro.spring.web.ShiroFilterFactoryBean : ehCacheManager()
+2019-09-20 14:06:52,387 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'ehCacheManager' of type [org.apache.shiro.cache.ehcache.EhCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,390 INFO  org.apache.shiro.spring.web.ShiroFilterFactoryBean : myShiroRealm()
+2019-09-20 14:06:52,421 INFO  org.apache.shiro.cache.ehcache.EhCacheManager : Cache with name 'com.discern.discern.config.MyAuthorizingRealm.authorizationCache' does not yet exist.  Creating now.
+2019-09-20 14:06:52,662 INFO  org.apache.shiro.cache.ehcache.EhCacheManager : Added EhCache named [com.discern.discern.config.MyAuthorizingRealm.authorizationCache]
+2019-09-20 14:06:52,754 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'torrent_redis' of type [com.discern.discern.service.RedisClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,756 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'redisService' of type [com.discern.discern.service.RedisService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,879 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#79e4c792' of type [org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,882 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#79e4c792' of type [java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,904 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#350aac89' of type [org.springframework.data.repository.core.support.PropertiesBasedNamedQueries] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,924 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#7f485fda' of type [org.springframework.data.repository.core.support.RepositoryFragmentsFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,926 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#7f485fda' of type [org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,943 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#72cc7e6f' of type [org.springframework.data.repository.query.ExtensionAwareEvaluationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,957 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:52,997 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,048 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,161 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,194 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,212 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties' of type [org.springframework.boot.autoconfigure.orm.jpa.JpaProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,228 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration' of type [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$$EnhancerBySpringCGLIB$$e3be48c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,255 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties' of type [org.springframework.boot.autoconfigure.transaction.TransactionProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,264 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'platformTransactionManagerCustomizers' of type [org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,287 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$EnhancerBySpringCGLIB$$afa1759b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,305 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'hikariPoolDataSourceMetadataProvider' of type [org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration$$Lambda$320/1896232624] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,350 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration' of type [org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration$$EnhancerBySpringCGLIB$$6e211026] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:53,476 INFO  com.zaxxer.hikari.HikariDataSource : discern - Starting...
+2019-09-20 14:06:54,087 INFO  com.zaxxer.hikari.HikariDataSource : discern - Start completed.
+2019-09-20 14:06:54,118 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'jpaVendorAdapter' of type [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:54,131 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'entityManagerFactoryBuilder' of type [org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:54,249 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-09-20 14:06:54,298 INFO  org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-09-20 14:06:54,546 INFO  org.hibernate.Version : HHH000412: Hibernate Core {5.2.17.Final}
+2019-09-20 14:06:54,559 INFO  org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found
+2019-09-20 14:06:54,739 INFO  org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-09-20 14:06:56,108 INFO  org.hibernate.dialect.Dialect : HHH000400: Using dialect: com.discern.discern.utils.DB_Charset
+Hibernate: alter table role_function add constraint FKj7vralgyqeaxr7q5r78ealumr foreign key (function_id) references functions (function_id)
+2019-09-20 14:06:57,805 WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl : GenerationTarget encountered exception accepting command : Error executing DDL via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:183)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:72)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:312)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:892)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1767)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1704)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:581)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:367)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:110)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:625)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:444)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1256)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1105)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:312)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:131)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1611)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1363)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:373)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:580)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:818)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:724)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:474)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1256)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1105)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:818)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:724)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:474)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1256)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1105)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:94)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:254)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1069)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1042)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:492)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1256)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1105)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:503)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:94)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:254)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1069)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1042)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:492)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:238)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:710)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:535)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
+	at com.discern.discern.DiscernApplication.main(DiscernApplication.java:12)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`discern`.`#sql-7c35_1b67b`, CONSTRAINT `FKj7vralgyqeaxr7q5r78ealumr` FOREIGN KEY (`function_id`) REFERENCES `functions` (`function_id`))
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2482)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2440)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:845)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:745)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 146 common frames omitted
+2019-09-20 14:06:57,828 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-09-20 14:06:57,835 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'entityManagerFactory' of type [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:57,843 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'entityManagerFactory' of type [com.sun.proxy.$Proxy105] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:57,888 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#18271936' of type [com.sun.proxy.$Proxy107] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,075 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'jpaMappingContext' of type [org.springframework.data.jpa.repository.config.JpaMetamodelMappingContextFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,079 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'jpaMappingContext' of type [org.springframework.data.jpa.mapping.JpaMetamodelMappingContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,587 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'userJpaDao' of type [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,590 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'userJpaDao' of type [com.sun.proxy.$Proxy109] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,606 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#58359ebd' of type [org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,606 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#58359ebd' of type [java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,607 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#10993713' of type [org.springframework.data.repository.core.support.PropertiesBasedNamedQueries] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,608 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#5f031ebd' of type [org.springframework.data.repository.core.support.RepositoryFragmentsFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,609 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#5f031ebd' of type [org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,610 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#53812a9b' of type [org.springframework.data.repository.query.ExtensionAwareEvaluationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,612 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#41e350f1' of type [com.sun.proxy.$Proxy107] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,631 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'functionJpaDao' of type [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,632 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'functionJpaDao' of type [com.sun.proxy.$Proxy113] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,633 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.discern.discern.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:58,635 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'authRealm' of type [com.discern.discern.config.MyAuthorizingRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+rememberMeManager()
+2019-09-20 14:06:59,093 INFO  org.apache.shiro.spring.web.ShiroFilterFactoryBean : rememberMeCookie()
+2019-09-20 14:06:59,106 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:59,123 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'cookieRememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:59,175 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'configWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:59,180 INFO  org.apache.shiro.spring.web.ShiroFilterFactoryBean : securityManager()
+2019-09-20 14:06:59,254 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:59,257 INFO  org.apache.shiro.spring.web.ShiroFilterFactoryBean : authorizationAttributeSourceAdvisor()
+2019-09-20 14:06:59,607 INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-20 14:06:59,627 INFO  com.discern.discern.config.RedisConfig : RedisCacheConfig.keyGenerator()
+2019-09-20 14:06:59,710 INFO  org.apache.shiro.spring.web.ShiroFilterFactoryBean : shirFilter()
+2019-09-20 14:07:00,688 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 80 (http)
+2019-09-20 14:07:00,756 INFO  org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2019-09-20 14:07:00,757 INFO  org.apache.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31
+2019-09-20 14:07:00,785 INFO  org.apache.catalina.core.AprLifecycleListener : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-09-20 14:07:00,971 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2019-09-20 14:07:00,972 INFO  org.springframework.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 14165 ms
+2019-09-20 14:07:01,643 INFO  org.springframework.boot.web.servlet.ServletRegistrationBean : Servlet dispatcherServlet mapped to [/]
+2019-09-20 14:07:01,660 INFO  org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-09-20 14:07:01,661 INFO  org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-09-20 14:07:01,661 INFO  org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-09-20 14:07:01,662 INFO  org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*]
+2019-09-20 14:07:01,662 INFO  org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'crossOriginResourceFilter' to: [/*]
+2019-09-20 14:07:01,662 INFO  org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'shiroFilter' to: [/*]
+2019-09-20 14:07:01,662 INFO  org.springframework.boot.web.servlet.FilterRegistrationBean : Mapping filter: 'openEntityManagerInViewFilter' to: [/*]
+2019-09-20 14:07:01,736 INFO  com.discern.discern.config.CrossOriginResourceFilter : ==============================Cross region init================================
+2019-09-20 14:07:03,348 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/batchAddBaseface],methods=[POST],consumes=[multipart/form-data]}" onto public java.util.Map com.discern.discern.controller.DiscernController.importProject(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2019-09-20 14:07:03,350 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/findLocal],methods=[POST]}" onto public java.util.Map com.discern.discern.controller.DiscernController.findLocal(com.discern.discern.entity.Baseface,javax.servlet.http.HttpServletRequest)
+2019-09-20 14:07:03,351 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/findLocalHistory]}" onto public java.util.Map com.discern.discern.controller.DiscernController.findLocalHistory(javax.servlet.http.HttpServletRequest,com.discern.discern.entity.Baseface)
+2019-09-20 14:07:03,351 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/improtDemo]}" onto public void com.discern.discern.controller.DiscernController.exportParam(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.Long)
+2019-09-20 14:07:03,351 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/addBaseface],methods=[POST]}" onto public java.util.Map com.discern.discern.controller.DiscernController.add(com.discern.discern.entity.Baseface,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2019-09-20 14:07:03,352 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/compare],methods=[POST]}" onto public java.util.Map com.discern.discern.controller.DiscernController.compare(com.discern.discern.entity.Baseface,javax.servlet.http.HttpServletRequest)
+2019-09-20 14:07:03,352 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/snapshot]}" onto public java.util.Map com.discern.discern.controller.DiscernController.compare(javax.servlet.http.HttpServletRequest) throws java.io.IOException
+2019-09-20 14:07:03,352 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/find]}" onto public java.util.Map com.discern.discern.controller.DiscernController.find(com.discern.discern.entity.Baseface,javax.servlet.http.HttpServletRequest,java.lang.Integer,java.lang.Integer)
+2019-09-20 14:07:03,353 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/discern/delete],methods=[POST]}" onto public java.util.Map com.discern.discern.controller.DiscernController.delete(java.lang.Integer,javax.servlet.http.HttpServletRequest)
+2019-09-20 14:07:03,354 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/login/verifyCode],methods=[GET]}" onto public byte[] com.discern.discern.controller.LoginController.getVerifyCode(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+2019-09-20 14:07:03,355 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/login/ajaxLogin],methods=[POST]}" onto public com.alibaba.fastjson.JSONObject com.discern.discern.controller.LoginController.ajaxLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-20 14:07:03,356 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/rest/findAll],methods=[POST]}" onto public java.util.List<java.lang.String> com.discern.discern.controller.restController.findAll()
+2019-09-20 14:07:03,356 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/rest/addUser],methods=[POST]}" onto public java.util.Map com.discern.discern.controller.restController.addUser(com.discern.discern.entity.User)
+2019-09-20 14:07:03,357 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/rest/sign],methods=[POST]}" onto public java.util.HashMap com.discern.discern.controller.restController.findByUserName(java.lang.String)
+2019-09-20 14:07:03,361 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/role/findByUserDepartment]}" onto public java.util.Map com.discern.discern.controller.RoleController.findByUserDepartment(javax.servlet.http.HttpServletRequest)
+2019-09-20 14:07:03,362 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/role/update]}" onto public java.util.Map com.discern.discern.controller.RoleController.bindFunction(com.discern.discern.entity.Role,java.util.List<java.lang.Integer>)
+2019-09-20 14:07:03,364 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/findById]}" onto public java.util.Map com.discern.discern.controller.UserController.findById(java.lang.Integer)
+2019-09-20 14:07:03,365 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/addUser/{roleId}],methods=[POST]}" onto public java.util.Map com.discern.discern.controller.UserController.addUser(com.discern.discern.entity.User)
+2019-09-20 14:07:03,365 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/import],methods=[POST]}" onto public java.util.Map com.discern.discern.controller.UserController.addUser(org.springframework.web.multipart.MultipartFile)
+2019-09-20 14:07:03,366 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/findByUserName]}" onto public java.util.HashMap com.discern.discern.controller.UserController.findByUserName(javax.servlet.http.HttpServletRequest,java.lang.Integer,java.lang.Integer,com.discern.discern.entity.User)
+2019-09-20 14:07:03,366 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/logout],methods=[POST]}" onto public java.lang.String com.discern.discern.controller.UserController.logout()
+2019-09-20 14:07:03,366 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/export]}" onto public void com.discern.discern.controller.UserController.export(javax.servlet.http.HttpServletResponse)
+2019-09-20 14:07:03,367 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/update/{roleId}],methods=[POST]}" onto public java.util.Map com.discern.discern.controller.UserController.update(com.discern.discern.entity.User)
+2019-09-20 14:07:03,367 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/users/delete]}" onto public java.util.Map com.discern.discern.controller.UserController.delete(java.lang.Integer)
+2019-09-20 14:07:03,372 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-09-20 14:07:03,373 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-09-20 14:07:03,374 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-09-20 14:07:03,378 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-09-20 14:07:03,379 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-09-20 14:07:03,823 INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-09-20 14:07:04,112 INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-20 14:07:04,556 INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@73f792cf: startup date [Fri Sep 20 14:06:46 CST 2019]; root of context hierarchy
+2019-09-20 14:07:04,726 INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-20 14:07:04,727 INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-20 14:07:04,727 INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping : Mapped URL path [/www/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-09-20 14:07:04,878 INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2019-09-20 14:07:07,367 INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Registering beans for JMX exposure on startup
+2019-09-20 14:07:07,372 INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-09-20 14:07:07,386 INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+2019-09-20 14:07:07,392 INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-09-20 14:07:07,395 INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+2019-09-20 14:07:07,443 INFO  org.springframework.context.support.DefaultLifecycleProcessor : Starting beans in phase 2147483647
+2019-09-20 14:07:07,444 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper : Context refreshed
+2019-09-20 14:07:07,472 INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-09-20 14:07:07,530 INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner : Scanning for api listing references
+2019-09-20 14:07:07,709 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: compareUsingPOST_1
+2019-09-20 14:07:08,254 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: addUserUsingPOST_1
+2019-09-20 14:07:08,258 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: addUserUsingPOST_2
+2019-09-20 14:07:08,264 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPOST_1
+2019-09-20 14:07:08,278 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: exportUsingPOST_1
+2019-09-20 14:07:08,280 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: exportUsingPOST_2
+2019-09-20 14:07:08,282 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: exportUsingPOST_3
+2019-09-20 14:07:08,284 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: exportUsingPOST_4
+2019-09-20 14:07:08,286 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: exportUsingPOST_5
+2019-09-20 14:07:08,287 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: exportUsingPOST_6
+2019-09-20 14:07:08,289 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: exportUsingPOST_7
+2019-09-20 14:07:08,315 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: findByUserNameUsingPOST_1
+2019-09-20 14:07:08,329 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: findByUserNameUsingPOST_2
+2019-09-20 14:07:08,339 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: findByUserNameUsingPOST_3
+2019-09-20 14:07:08,349 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: findByUserNameUsingPOST_4
+2019-09-20 14:07:08,360 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: findByUserNameUsingPOST_5
+2019-09-20 14:07:08,370 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: findByUserNameUsingPOST_6
+2019-09-20 14:07:08,381 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: findByUserNameUsingPOST_7
+2019-09-20 14:07:08,392 INFO  springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator : Generating unique operation named: findByUserNameUsingPOST_8
+2019-09-20 14:07:08,460 ERROR org.apache.catalina.core.StandardService : Failed to start connector [Connector[HTTP/1.1-80]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-80]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:256)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:198)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:553)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
+	at com.discern.discern.DiscernApplication.main(DiscernApplication.java:12)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1020)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	... 21 common frames omitted
+Caused by: java.net.BindException: 地址已在使用
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1150)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:591)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1018)
+	... 22 common frames omitted
+2019-09-20 14:07:08,476 INFO  org.apache.catalina.core.StandardService : Stopping service [Tomcat]
+2019-09-20 14:07:08,481 INFO  com.discern.discern.config.CrossOriginResourceFilter : ==============================Cross region destroy================================
+2019-09-20 14:07:08,507 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-09-20 14:07:08,512 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 80 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 80, or configure this application to listen on another port.
+
+2019-09-20 14:07:08,517 INFO  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@73f792cf: startup date [Fri Sep 20 14:06:46 CST 2019]; root of context hierarchy
+2019-09-20 14:07:08,520 INFO  org.springframework.context.support.DefaultLifecycleProcessor : Stopping beans in phase 2147483647
+2019-09-20 14:07:08,521 INFO  org.springframework.context.support.DefaultLifecycleProcessor : Stopping beans in phase 0
+2019-09-20 14:07:08,555 INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown
+2019-09-20 14:07:08,556 INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter : Unregistering JMX-exposed beans
+2019-09-20 14:07:08,566 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-09-20 14:07:08,569 INFO  com.zaxxer.hikari.HikariDataSource : discern - Shutdown initiated...
+2019-09-20 14:07:08,580 INFO  com.zaxxer.hikari.HikariDataSource : discern - Shutdown completed.
+2019-09-20 14:07:08,581 INFO  org.springframework.cache.ehcache.EhCacheManagerFactoryBean : Shutting down EhCache CacheManager

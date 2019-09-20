@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="renderer" content="webkit" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link rel="icon" type="image/png" href="/assets/i/favicon.png" />
+        <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png" />
+        <script src="../js/jquery.min.js"></script>
+        <style>
+            .header {
+                text-align: center;
+            }
+            .header h1 {
+                font-size: 200%;
+                color: #333;
+                margin-top: 30px;
+            }
+            .header p {
+                font-size: 14px;
+            }
+        </style>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #picture{
+                margin: 25px auto;
+                width: 400px;
+                height:200px;
+                display: block;
+            }
+            #box{
+                width: 300px;
+                height: 70px;
+                margin: 30px auto;
+
+                /*background-color: yellow;*/
+
+            }
+            #box input{
+                width: 100px;
+                height: 30px;
+                /*margin: 10px;*/
+                margin-top:20px;
+                margin-right: 20px;
+
+            }
+        </style>
+    </head>
+
+    <body>
+    <div id="box">
+        <input type="button" value="开始抽奖" id="start">
+        <input type="button" value="停止抽奖" id="end">
+    </div>
+    <img src="01.jpg" alt="" id="picture">
+    </body>
+
+
+    <script>
+        var timer;
+        window.onload = function () {
+            var start = document.getElementById('start');
+            var end = document.getElementById('end');
+            var picture = document.getElementById('picture');
+            //用来存储图片路径的数组
+            var picarr = ['01.jpg', '02.jpg', '03.jpg'];
+            //给按钮加单击事件
+            clearInterval(timer);
+            start.onclick = function () {
+                //设置定时器,每隔一秒换一张图片
+                timer = setInterval(function () {
+                    //抽取数组随机下标
+                    var num = Math.floor(Math.random() * (picarr.length - 1 + 1 - 0) + 0);
+                    //将抽到的图片路径给图片元素
+                    picture.setAttribute('src', picarr[num]);
+                }, 10)
+            }
+            //给停止按钮加单击事件
+            end.onclick = function () {
+                clearInterval(timer);
+            }
+        }
+    </script>
+</html>

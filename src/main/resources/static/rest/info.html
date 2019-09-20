@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>签到处</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="/assets/i/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png"/>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        .header {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 200%;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .header p {
+            font-size: 14px;
+        }
+
+        .button_ {
+            height: 34px;
+            width: 80%;
+            background: linear-gradient(to right, rgb(0, 115, 214), rgb(105, 159, 218));
+            color: #fff;
+            position: relative;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            line-height: 34px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px #525252;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(back.jpg) no-repeat top;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            position: absolute;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
+        }
+
+        .row {
+            height: 34px;
+            width: 80%;
+        }
+
+        .col1 {
+            height: 34px;
+            width: 20%;
+            color: #fff;
+            text-align: right;
+            line-height: 45px;
+            float: left;
+        }
+
+        .col2 {
+            height: 34px;
+            width: 75%;
+            float: left;
+            border-bottom: 1px solid #fff;
+        }
+
+        .input_ {
+            background: none;
+            outline: none;
+            border: 0;
+            color: #fff;
+            padding: 0 10px;
+            margin-top: 17px;
+        }
+
+
+
+        .button_:active {
+            background: linear-gradient(to right, rgb(0, 139, 255), rgb(113, 188, 255));
+        }
+
+        input::-webkit-input-placeholder {
+            color: #dfdfdf;
+        }
+
+        input::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #dfdfdf;
+        }
+
+        input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #dfdfdf;
+        }
+
+        input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #dfdfdf;
+        }
+
+    </style>
+</head>
+
+<body>
+<h3  align="center" style="color: #cfcdd0;margin-top: 60%;vertical-align: center;">未报名，请完善以下信息！</h3>
+<div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <form method="post" class="am-form" action="/rest/sign">
+
+        <div class="row" style=" margin: 10% auto 0;">
+            <div class="col1">
+                单位：
+            </div>
+            <div class="col2">
+                <input type="text" class="input_ input_class" id="departmentName"/>
+            </div>
+        </div>
+
+        <div class="row" style=" margin:0 auto;">
+            <div class="col1">
+                姓名：
+            </div>
+            <div class="col2">
+                <input type="text" class="input_ input_class2" id="nickname"/>
+            </div>
+        </div>
+
+        <div class="row" style=" margin:0 auto;">
+            <div class="col1">
+                电话：
+            </div>
+            <div class="col2">
+                <input type="text" class="input_ input_class3" id="phone"/>
+            </div>
+        </div>
+
+
+        <div class="button_" onclick="sign()">签到</div>
+    </form>
+</div>
+
+<!--<div class="footer">© 2019 BingJiang, Inc.</div>-->
+</div>
+</div>
+</body>
+
+<script>
+    window.alert = function (name) {
+        const iframe = document.createElement('IFRAME');
+        iframe.style.display = 'none';
+        iframe.setAttribute('src', 'data:text/plain,');
+        document.documentElement.appendChild(iframe);
+        window.frames[0].window.alert(name);
+        iframe.parentNode.removeChild(iframe);
+    };
+    function sign() {
+        if($("#departmentName").val()==""||$("#departmentName").val()==undefined){
+            alert("单位名称不可为空!")
+            return;
+        }
+        if($("#nickname").val()==""||$("#nickname").val()==undefined){
+            alert("姓名不可为空!")
+            return;
+        }
+        if($("#phone").val()==""||$("#phone").val()==undefined){
+            alert("手机号不可为空!");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/rest/addUser",
+            data: {
+                departmentName: $("#departmentName").val(),
+                nickname: $("#nickname").val(),
+                phone: $("#phone").val()
+            },
+            dataType: "json",
+            async: true,
+            timeout: 50000,
+            success: function (result) {
+                if (result.code == 200) {
+                    window.location.href = "success.html";
+                } else if (result.code == 300) {
+                    window.location.href = "info.html";
+                } else {
+                    alert("签到失败");
+                }
+            },
+            error: function (result) {
+                alert("签到失败");
+            }
+        });
+    }
+    var oInp = document.querySelector('.input_class');
+    oInp.onblur = function () {
+        $('html,body').animate({scrollTop:10},500);
+    };
+    var oInp = document.querySelector('.input_class2');
+    oInp.onblur = function () {
+        $('html,body').animate({scrollTop:10},500);
+    };
+    var oInp = document.querySelector('.input_class3');
+    oInp.onblur = function () {
+        $('html,body').animate({scrollTop:10},500);
+    };
+</script>
+</html>

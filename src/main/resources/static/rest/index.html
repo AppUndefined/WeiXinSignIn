@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>签到处</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="/assets/i/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="/assets/i/app-icon72x72@2x.png"/>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        input {
+
+            border-bottom: 1px solid #dbdbdb;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 200%;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .header p {
+            font-size: 14px;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(back.jpg) no-repeat top;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            position: absolute;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
+        }
+
+        .button_ {
+            height: 34px;
+            width: 80%;
+            background: linear-gradient(to right, rgb(0, 115, 214), rgb(105, 159, 218));
+            color: #fff;
+            position: relative;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            line-height: 34px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px #525252;
+        }
+
+        .button_:active {
+            background: linear-gradient(to right, rgb(0, 139, 255), rgb(113, 188, 255));
+        }
+
+        input::-webkit-input-placeholder {
+            color: #dfdfdf;
+        }
+
+        input::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #dfdfdf;
+        }
+
+        input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #dfdfdf;
+        }
+
+        input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #dfdfdf;
+        }
+    </style>
+</head>
+
+<body>
+<div class="am-g">
+    <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+        <form method="post" class="am-form" action="/rest/sign">
+            <input class="input_class" style="position:relative;margin-top:84%;margin-left:10%;height: 14%;width: 80%;background:none;outline: none;color:#fff"
+                   type="tel" name="tel" id="phone" placeholder="请在这里输入手机号"/>
+
+            <div class="button_" onclick="sign()">签到</div>
+            <!--<div style="background:url(button.png) no-repeat  center;height: 20px;width: 80%"><button style="position:relative;margin-top:16%;margin-left:10%;height: 20%;width: 80%" type="button" onclick="sign()" value="签到" class="am-btn am-btn-primary am-btn-sm am-fl" >签到</button></div>-->
+        </form>
+    </div>
+</div>
+<!--<div class="footer">© 2019 BingJiang, Inc.</div>-->
+</body>
+<script>
+    window.alert = function (name) {
+        const iframe = document.createElement('IFRAME');
+        iframe.style.display = 'none';
+        iframe.setAttribute('src', 'data:text/plain,');
+        document.documentElement.appendChild(iframe);
+        window.frames[0].window.alert(name);
+        iframe.parentNode.removeChild(iframe);
+    };
+    $(document).keydown(function (event) {
+        //alert(event.keyCode);
+        //判断当event.keyCode 为37时（即左方面键），执行函数to_left();
+        //判断当event.keyCode 为39时（即右方面键），执行函数to_right();
+        if (event.keyCode == 13) {
+            sign();
+        }
+    });
+    function sign() {
+        if($("#phone").val()==""||$("#phone").val()==undefined){
+            alert("手机号不可为空!");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "/rest/sign",
+            data: {
+                phone: $("#phone").val(),
+            },
+            dataType: "json",
+            async: true,
+            timeout: 50000,
+            success: function (result) {
+                if (result.code == 200) {
+                    window.location.href = "success.html";
+                } else if (result.code == 300) {
+                    window.location.href = "info.html";
+                } else {
+                    alert("签到失败");
+                }
+            },
+            error: function (result) {
+                alert("签到失败");
+            }
+        });
+    }
+
+    var oInp = document.querySelector('.input_class');
+    oInp.onblur = function () {
+        $('html,body').animate({scrollTop:10},500);
+    };
+
+
+</script>
+
+</html>

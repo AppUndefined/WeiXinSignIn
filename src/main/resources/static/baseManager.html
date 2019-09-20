@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- start: Meta -->
+	<meta charset="utf-8" />
+	<title>长安大学交通BIM研究中心</title>
+	<meta name="description" content="SimpliQ - Flat & Responsive Bootstrap Admin Template." />
+	<meta name="author" content="Łukasz Holeczek" />
+	<meta name="keyword" content="SimpliQ, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" />
+	<!-- end: Meta -->
+
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- end: Mobile Specific -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-table.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap-table.min.js"></script>
+	<script src="js/bootstrap-table-zh-CN.min.js"></script>
+	<!-- start: CSS -->
+
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+
+
+	<link href="css/style.min.css" rel="stylesheet" />
+	<link href="css/style-responsive.min.css" rel="stylesheet" />
+	<link href="css/retina.css" rel="stylesheet" />
+	<!-- end: CSS -->
+
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<link id="ie-style" href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+
+	<!--[if IE 9]>
+	<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+
+	<!-- start: Favicon and Touch Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+	<link rel="shortcut icon" href="ico/favicon.png" />
+	<!-- end: Favicon and Touch Icons -->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+<!-- start: Header -->
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a id="main-menu-toggle" class="hidden-phone open"><i class="icon-reorder"></i></a>
+			<div class="row-fluid">
+				<a class="brand span2" ><span>长安大学交通BIM研究中心</span></a>
+			</div>
+			<!-- start: Header Menu -->
+			<div class="nav-no-collapse header-nav"></div>
+			<!-- end: Header Menu -->
+
+		</div>
+	</div>
+</div>
+<!-- start: Header -->
+
+<div class="container-fluid-full">
+	<div class="row-fluid">
+
+		<!-- start: Main Menu -->
+		<div id="sidebar-left" class="span2">
+
+
+			<div class="nav-collapse sidebar-nav">
+				<ul class="nav nav-tabs nav-stacked main-menu" id="faceCompare">
+
+
+				</ul>
+			</div>
+		</div>
+		<!-- end: Main Menu -->
+
+		<!-- start: Content -->
+		<div id="content" class="span10">
+			<div class="row-fluid">
+				<div class="box span12">
+					<div class="box-header" data-original-title="">
+						<h2><i class="icon-user"></i><span class="break"></span>人员管理</h2>
+
+						<div class="box-icon">
+							<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+						</div>
+
+					</div>
+						<button type="button"  id="myButton" style="margin-top: 5px;margin-bottom: 5px"  class=" btn btn-primary " >
+							添加底库
+						</button>
+					<input style="display: none" onchange="showImprotFile(event)" id="improtFile" type="file" placeholder="请选择文件..." />
+					<button type="button" onclick="downloadTemplate()"  style="margin-top: 5px;margin-bottom: 5px"  class=" btn btn-primary " >
+						下载导入模板
+					</button>
+						<button type="button" onclick="
+						batchImport()"  style="margin-top: 5px;margin-bottom: 5px"  class=" btn btn-primary " >
+							批量导入
+						</button>
+
+					ID:<input type="text"  style="margin-top: 10px"   id="searchId" >
+						姓名:<input type="text"  style="margin-top: 10px"  id="searchName" >
+						创建人:<input type="text"  style="margin-top: 10px"  id="searchUser" >
+						性别:<input type="text"  style="margin-top: 10px"  id="searchSex" >
+					<button type="button"  onclick="searchButton()"   style="margin-top: 10px;margin-bottom: 10px;"  class=" btn btn-primary " >
+						搜索
+					</button>
+					<button type="button"  onclick="cleanSearchButton()"   style="margin-top: 10px;margin-bottom: 10px;"  class=" btn btn-primary " >
+						清空
+					</button>
+
+
+					<div class="box-content">
+						<table id="baseTable"  class="table table-striped table-bordered ">
+							<img src="img/wait.gif" style="display:none" id="imgWait" width="100px" height="100px"/>
+						</table>
+					</div>
+				</div><!--/span-->
+
+			</div>
+
+
+
+
+
+			<!-- end: Content -->
+
+		</div><!--/fluid-row-->
+		<div class="clearfix"></div>
+
+
+	</div><!--/.fluid-container-->
+	<!-------------------------------------------------新增底库对话框-->
+	<div class="modal fade hide " id="addUserModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 50px">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="addUser">新增</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group "  align="center">
+
+						<label for="name" ><img id="uploadFile" src="" width="100px" height="100px"></label>
+					</div>
+					<div class="form-group "  align="center">
+
+						<label for="name" >
+							<input style="display: none" onchange="showFile(event)" id="imgFile" type="file" placeholder="请选择文件..." />
+							<button class="btn btn-primary" onclick="clickFileInput()">上传照片</button> </span></label>
+					</div>
+					<div class="form-group "  align="center">
+
+						<label for="name" >&nbsp姓名:&nbsp<input type="text"  name="txt_departmentname" class="form-control" id="name" ></label>
+					</div>
+					<div class="form-group"  align="center">
+
+						<label for="age">&nbsp年龄:&nbsp<input type="text" name="txt_parentdepartment" class="form-control" id="age" ></label>
+					</div>
+					<div class="form-group"  align="center">
+
+						<label for="sex">&nbsp性别:&nbsp<input type="text" name="txt_parentdepartment" class="form-control" id="sex" ></label>
+						</select></label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+					<button type="button" onclick="addUserButton()" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-------------------------------------------------新增底库对话框-->
+	<!-------------------------------------------------openImage对话框-->
+	<div class="modal fade hide " id="openImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 50px">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-body">
+					<div class="form-group "  align="center">
+
+						<label for="name" ><img id="baseimage" src="" width="300px" height="300px"></label>
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-------------------------------------------------openImage底库对话框-->
+	<!-- start: JavaScript-->
+	<!--<script src="js/jquery-1.10.2.min.js"></script>-->
+	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="js/jquery.ui.touch-punch.js"></script>
+	<script src="js/modernizr.js"></script>
+
+	<script src="js/jquery.cookie.js"></script>
+	<script src='js/fullcalendar.min.js'></script>
+	<script src='js/jquery.dataTables.min.js'></script>
+	<script src="js/excanvas.js"></script>
+	<script src="js/jquery.flot.js"></script>
+	<script src="js/jquery.flot.pie.js"></script>
+	<script src="js/jquery.flot.stack.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	<script src="js/jquery.flot.time.js"></script>
+
+	<script src="js/jquery.chosen.min.js"></script>
+	<script src="js/jquery.uniform.min.js"></script>
+	<script src="js/jquery.cleditor.min.js"></script>
+	<script src="js/jquery.noty.js"></script>
+	<script src="js/jquery.elfinder.min.js"></script>
+	<script src="js/jquery.raty.min.js"></script>
+	<script src="js/jquery.iphone.toggle.js"></script>
+	<script src="js/jquery.uploadify-3.1.min.js"></script>
+	<script src="js/jquery.gritter.min.js"></script>
+	<script src="js/jquery.imagesloaded.js"></script>
+	<script src="js/jquery.masonry.min.js"></script>
+	<script src="js/jquery.knob.modified.js"></script>
+	<script src="js/jquery.sparkline.min.js"></script>
+	<script src="js/counter.min.js"></script>
+	<script src="js/raphael.2.1.0.min.js"></script>
+	<script src="js/justgage.1.0.1.min.js"></script>
+	<script src="js/jquery.autosize.min.js"></script>
+	<script src="js/retina.js"></script>
+	<script src="js/jquery.placeholder.min.js"></script>
+	<script src="js/wizard.min.js"></script>
+	<script src="js/core.min.js"></script>
+	<script src="js/charts.min.js"></script>
+	<script src="js/custom.min.js"></script>
+	<!-- end: JavaScript-->
+	<script>
+		//下载批量导入模板
+		function downloadTemplate() {
+            var $eleForm = $("<form method='get'></form>");
+            $eleForm.attr("action", "/discern/improtDemo");
+            $(document.body).append($eleForm);
+            //提交表单，实现下载
+            $eleForm.submit();
+        }
+        var baseface64;
+
+        //回显图片 //批量导入
+        function batchImport() {
+            $("#improtFile").click();
+
+        }
+		function openImage(value) {
+		    $("#baseimage").attr("src",value);
+            $('#openImage').modal();
+
+        }
+        //回显图片
+        function showFile(e) {
+            var dom =$("#imgFile")[0];
+            console.info(dom.value);//这个是文件的路径
+            var reader = new FileReader();
+            reader.onload = (function (file) {
+                return function (e) {
+                    baseface64=this.result;
+                    // alert(this.result); //这个就是base64的数据了
+                    var sss=$("#showImage");
+                    $("#uploadFile")[0].src=this.result;
+                };
+            })(e.target.files[0]);
+            reader.readAsDataURL(e.target.files[0]);
+        }
+
+        //导入文件
+        function showImprotFile(e) {
+            $("#imgWait").show();
+            var formData = new FormData();
+            formData.append("file", document.getElementById("improtFile").files[0]);
+            var dom =$("#improtFile")[0];
+            console.info(dom);//这个是文件的路径
+            $.ajax({
+                url: "discern/batchAddBaseface",
+                type: "POST",
+                data: formData,
+                /**
+                 *必须false才会自动加上正确的Content-Type
+                 */
+                contentType: false,
+                /**
+                 * 必须false才会避开jQuery对 formdata 的默认处理
+                 * XMLHttpRequest会对 formdata 进行正确的处理
+                 */
+                processData: false,
+                success: function (data) {
+                    if (data.code == 200) {
+                        alert(data.msg);
+                        $("#imgWait").hide();
+                        window.location.reload();
+                    }
+                    if (data.code == 500) {
+                        alert(data.msg);
+                    }
+
+                },
+                error: function () {
+                    alert("上传失败！");
+                    $("#imgWait").hide();
+                }
+            });
+
+        }
+        //新增底库
+        function addUserButton(){
+            $.ajax({
+                type: "POST",
+                url: "/discern/addBaseface",
+                data:{
+                    name:$("#name").val(),
+                    face:baseface64,
+                    age:$("#age").val(),
+                    sex:$("#sex").val()
+                },
+                dataType: "json",
+                async: true,
+                timeout: 50000,
+                success: function(result){
+                    if(result.code==200){
+                        alert("新增成功");
+                        //重新加载数据
+                        $('#baseTable').bootstrapTable('refresh');
+                    }else{
+                        alert(result.msg);
+                    }
+                },
+                error: function(result){
+                    alert("新增失败");
+                }
+            });
+        }
+
+	window.onload = function () {
+         tableLoader();
+			var level = $.cookie("level");
+			var guanliyuan = "管理员";
+			if(guanliyuan==level){
+                $("#faceCompare").append('<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> 人员管理</span></a></li><li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> 退出登录</span></a></li>');
+            }else{
+                $("#faceCompare").append('<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> 人脸识别</span></a></li><li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> 退出登录</span></a></li>');
+            }
+
+	}
+		function tableLoader(){
+            $('#baseTable').bootstrapTable({
+				// method:"post",
+            url:"/discern/find",
+                queryParams: function (params){
+                    return {
+                        limit: params.limit, // 每页要显示的数据条数
+                        offset: params.offset, // 每页显示数据的开始行号
+                        name: $("#searchName").val(),
+                        sex: $("#searchSex").val(),
+                        user: $("#searchUser").val(),
+                        id: $("#searchId").val()
+                    }
+                },
+                pagination: true,
+                pageSize: 5,
+                pageNumber:1,
+                pageList: [5, 10, 15, 20],  sidePagination:'server',
+            columns: [{
+                field: 'id',
+                title: 'ID编号',
+                align:"center"
+            },{
+                field: 'age',
+                title: '年龄',
+                align:"center"
+            }
+                ,{
+                    field: 'name',
+                    title: '姓名',
+                    align:"center"
+                }
+                ,{
+                    field: 'sex',
+                    title: '性别',
+                    align:"center"
+                }
+                ,{
+                    field: 'created',
+                    title: '创建日期',
+                    align:"center"
+                }, {
+                    field: 'face', title: '照片', align: "center",
+                    formatter: function (value, row, index) {
+                        var s;
+                        var imgurl = "'"+value+"'";
+                        s = '<a class = "view"  onclick="openImage('+imgurl+')" ><img style="width:50px;height:50px;"  src="' + value + '" /></a>';
+                        return s;
+                    }
+             	   },{
+                    field: 'id',
+                    title: '操作',
+                    align:"center",
+                    formatter:function(value,row,index){
+                        //通过formatter可以自定义列显示的内容
+                        //value：当前field的值，即id
+                        //row：当前行的数据
+                        var a = '<button  class="btn btn-danger"  onclick="baseDelete('+value+')">删除</button>';
+                        return a;
+                    }
+                }
+
+            ]
+        });
+		}
+        function queryParams() {
+            var temp = {
+                name: $("#searchName").val(),
+                sex:$("#searchSex").val(),
+                user: $("#searchUser").val(),
+                id: $("#searchId").val()
+            };
+            return temp;
+        }
+        $("#myButton").click(function () {
+            $("#addUser").text("新增");
+
+
+            $('#addUserModel').modal();
+        });
+        function  baseDelete(value) {
+            if(window.confirm('确认删除？')) {
+                $.post("/discern/delete", {
+                    faceId: value
+                }, function (result) {
+                    if (result.code == 200) {
+                        alert("删除成功");
+                        $('#baseTable').bootstrapTable('refresh');
+                    } else {
+                        alert("删除失败");
+                    }
+                });
+            }
+        }
+        function  usersUpdate( userId) {
+            $.ajax({
+                type: "POST",
+                url: "/users/findById",
+                data: {
+                    userId: userId
+                },
+                success: function (result) {
+                    var user = result.user;
+                    $("#editusername").val(user.username);
+                    $("#editpassword").val("************");
+                    $("#edituserId").val(user.userId);
+                    //选中该用户对应的角色
+                    if(result.role!=undefined&&result.role.id!=null&&result.role.id!=undefined){
+                        for(var i=0;i< $("#editrole")[0].length;i++){
+                            if($("#editrole")[0][i].value==result.role.id){
+                                $("#editrole")[0][i].selected ="selected";
+                            }
+                        }
+                    }
+                    $('#editUserModel').modal();
+                },
+                error: function (result) {
+                    alert("没有编辑权限");
+                }
+            });
+        }
+        function clickFileInput() {
+            $("#imgFile").click();
+        }
+        //清空搜索方法
+        function cleanSearchButton(){
+         $("#searchName").val(null),
+               $("#searchSex").val(null),
+              $("#searchUser").val(null),
+              $("#searchId").val(null)
+		}
+        //搜索方法
+        function searchButton() {
+            var opt = {
+                url: "/discern/find",
+                silent: true,
+                query:{
+                    name: $("#searchName").val(),
+                    sex:$("#searchSex").val(),
+                    user: $("#searchUser").val(),
+                    id: $("#searchId").val()
+                }
+            };
+                $('#baseTable').bootstrapTable('refresh',opt);
+        }
+	</script>
+</div>
+
+<footer>
+	<p>
+	</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <title>抽奖系统</title>
+</head>
+<body onselectstart='return false'>
+<div class="title">
+    <span style="font-size: 100px;text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.63)">幸运大抽奖</span>
+    <div style="font-size: 20px;text-align: right;margin-right: 20px;margin-top: 10px;text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.63)">
+        <span>秉承匠心情怀</span>
+        <span style="width: 10px;display: inline-block;"></span>
+        <span>潜挖数据价值</span>
+    </div>
+
+    <div class="line1">
+        <div class="before"></div>
+    </div>
+    <div class="line2">
+        <div class="before"></div>
+    </div>
+</div>
+<div class="rbox">
+    <div class="rboxsd"></div>
+    <div class="OdometerBox">
+        <div class="col">
+            <div class="row row1">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row row2">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row row3">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="b">*</div>
+        </div>
+        <div class="col">
+            <div class="b">*</div>
+        </div>
+        <div class="col">
+            <div class="b">*</div>
+        </div>
+        <div class="col">
+            <div class="b">*</div>
+        </div>
+        <div class="col">
+            <div class="row row4">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row row5">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row row6">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row row7">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+        </div>
+    </div>
+    <div class="showusername">
+        <div class="username">x x x</div>
+        <div class="tixing5"></div>
+        <div class="tixing6"></div>
+    </div>
+    <div id="startBtn">
+        <img id="startName" style="width: 70px;margin-top: 25px;" src="./img/r.png" alt=""/>
+        <div class="bg"></div>
+    </div>
+    <!--形状-->
+    <div class="tixing1"></div>
+    <div class="tixing2"></div>
+    <div class="tixing3"></div>
+</div>
+
+<div class="prize">
+    <h1 style="margin-top: 30px;" id="grade">
+        <span class="imgName" style="transition: opacity 2s;"></span>
+    </h1>
+    <div class="imgs">
+        <img src="./img/0.png" class="img" style="width: 300px;" alt="">
+    </div>
+    <h1 style="margin-top: 10px;" id="prize">
+        <span class="imgPs" style="transition: opacity 2s;"></span>
+    </h1>
+    <div class="bg"></div>
+
+    <div class="tixing4"></div>
+    <div class="after1"></div>
+    <div class="after2"></div>
+    <div class="after3"></div>
+    <div class="after4"></div>
+</div>
+
+
+<div id="particles"></div>
+</body>
+<script src="js/axios.min.js"></script>
+<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
+<script type='text/javascript' src='js/demo.js'></script>
+<script>
+    // utils
+    Array.prototype.remove = function (val) {
+        let index = this.indexOf(val);
+        if (index > -1) {
+            this.splice(index, 1);
+        }
+    };
+    // --------------------------------------------------
+
+    // -----------------------
+    // 三等奖 arr1 = [] * 6
+    // arr1 length === 0 next
+    // 二等奖 arr2 = [] * 4
+    // arr2 length === 0 next
+    // 一等奖 arr3 = [] * 1
+    // arr3 length === 0 next
+    // 特等奖 arr4 = [] * 1
+    // arr4 length === 0 next
+    // done...
+    // -----------------------
+
+    // ------- 二等奖 ---------
+    // 王彪       17621100567
+    // 尹华政     15810547586
+    // 曾莎洁     17821510005
+    // 袁毅       13819873321
+    // ------- 一等奖 ---------
+    // 张峰       13818963871
+    // ------- 特等奖 ---------
+    //
+    // -----------------------
+
+    let time;
+    time = setInterval(interval, 1000);
+
+    function interval() {
+        init();
+    }
+
+    let imgsArr = ['./img/0.png', './img/1.png', './img/2.png', './img/3.png', './img/f.png'];
+    let imgNameArr = ['一等奖', '二等奖', '三等奖', '特等奖'];
+    let imgPsArr = ['小米9号平衡车', '大疆灵眸Osmo手机云台', '华为智能音响', 'Galaxy智能建造管理平台'];
+
+    // 手机号
+    let threePhones = [];
+    let twoPhones = ['17621100567', '13601465599', '17821510005', '13819873321'];
+    let onePhones = ['13818963871'];
+    let specialPhones = ['13816872221'];
+
+    // 姓名
+    let threeNames = [];
+    let twoNames = ['王彪', '季锦章', '曾莎洁', '袁毅'];
+    let oneNames = ['张峰'];
+    let specialNames = ['胡震敏'];
+
+    // 获取抽奖按钮dom
+    let startBtn = document.getElementById('startBtn');
+
+    // 定义重复点击
+    let solt = true;
+
+    // 监听点击抽奖按钮
+    startBtn.addEventListener('click', click);
+
+    // 监听按下空格键
+    document.addEventListener('keydown', function (ev) {
+        if (ev.code === 'Space') {
+            click();
+        }
+    });
+
+    // 启动抽奖
+    function click() {
+        let startName = document.getElementById('startName');
+        startName.src = './img/s.png';
+        let username = document.querySelector('.username');
+        let imgName = document.querySelector('.imgName');
+        let imgPs = document.querySelector('.imgPs');
+        let imgs = document.querySelector('.img');
+        if (solt) {
+            time ? clearInterval(time) : null;
+            time = setInterval(interval, 500);
+            username.style.opacity = 0;
+            imgName.style.opacity = 0;
+            imgPs.style.opacity = 0;
+            imgs.src = imgsArr[0];
+            imgs.style.width = '300px';
+        } else {
+            startName.src = './img/r.png';
+            if (threePhones.length === 0) {
+                // 三等奖抽取完成
+                if (twoPhones.length === 0) {
+                    // 二等奖抽取完成
+                    if (onePhones.length === 0) {
+                        // 一等奖抽取完成
+                        if (specialPhones.length === 0) {
+                            // 特等奖抽取完成
+                            console.log('完成！')
+                        } else {
+                            imgs.style.width = '300px';
+                            imgName.innerText = imgNameArr[3];
+                            imgs.src = imgsArr[4];
+                            imgPs.innerText = imgPsArr[3];
+                            stop(specialPhones, Math.floor(Math.random() * specialPhones.length), specialNames);
+                        }
+                    } else {
+                        imgs.style.width = '300px';
+                        imgName.innerText = imgNameArr[0];
+                        imgs.src = imgsArr[1];
+                        imgPs.innerText = imgPsArr[0];
+                        stop(onePhones, Math.floor(Math.random() * onePhones.length), oneNames);
+                    }
+                } else {
+                    imgName.innerText = imgNameArr[1];
+                    imgs.src = imgsArr[2];
+                    imgPs.innerText = imgPsArr[1];
+                    imgs.style.width = '220px';
+                    stop(twoPhones, Math.floor(Math.random() * twoPhones.length), twoNames);
+                }
+            } else {
+                imgs.style.width = '300px';
+                imgName.innerText = imgNameArr[2];
+                imgs.src = imgsArr[3];
+                imgPs.innerText = imgPsArr[2];
+                stop(threePhones, Math.floor(Math.random() * threePhones.length), threeNames);
+            }
+            imgName.style.opacity = 1;
+            imgPs.style.opacity = 1;
+        }
+        solt = !solt;
+    }
+
+    // 停止中奖人方法
+    function stop(arr, index, names) {
+        //内定
+        let username = document.querySelector('.username');
+        username.innerHTML = names[index];
+        username.style.opacity = 1;
+        time ? clearInterval(time) : null;
+        init(
+            arr[index].split('')[0],
+            arr[index].split('')[1],
+            arr[index].split('')[2],
+            arr[index].split('')[7],
+            arr[index].split('')[8],
+            arr[index].split('')[9],
+            arr[index].split('')[10]
+        );
+        arr.remove(arr[index]);
+        names.remove(names[index]);
+    }
+
+    // 初始化
+    function init(num1, num2, num3, num4, num5, num6, num7) {
+        let row1 = document.querySelector('.row1');
+        let row2 = document.querySelector('.row2');
+        let row3 = document.querySelector('.row3');
+        let row4 = document.querySelector('.row4');
+        let row5 = document.querySelector('.row5');
+        let row6 = document.querySelector('.row6');
+        let row7 = document.querySelector('.row7');
+        let random2 = Math.floor(Math.random() * 10);
+        let random3 = Math.floor(Math.random() * 10);
+        let random4 = Math.floor(Math.random() * 10);
+        let random5 = Math.floor(Math.random() * 10);
+        let random6 = Math.floor(Math.random() * 10);
+        let random7 = Math.floor(Math.random() * 10);
+        row1.style.top = `${-(51)}px`;
+        row2.style.top = `${-(51 * (num2 || random2))}px`;
+        row3.style.top = `${-(51 * (num3 || random3))}px`;
+        row4.style.top = `${-(51 * (num4 || random4))}px`;
+        row5.style.top = `${-(51 * (num5 || random5))}px`;
+        row6.style.top = `${-(51 * (num6 || random6))}px`;
+        row7.style.top = `${-(51 * (num7 || random7))}px`;
+    }
+
+    // axios
+    (function (http) {
+        console.log('正在初始化数据...');
+        http.post('http://www.bjblackhole.cn:55555/rest/findAll', {}).then(res => {
+            console.log('初始化数据成功!');
+            let data = res.data;
+            let all = data || [];
+            threeNames = [];
+            threePhones = [];
+            for (let i = 0; i < 6; i++) {
+                rand();
+            }
+
+            function rand() {
+                let be = [
+                    '王彪:176****0567',
+                    '尹华政:158****7586',
+                    '曾莎洁:178****0005',
+                    '袁毅:138****3321',
+                    '张峰:138****3871',
+                    '夏海兵:186****1762',
+                    '王金纪:136****9607',
+                    '张豫:186****1196',
+                    '高阳:187****9354',
+                    '王栋栋:137****5083',
+                    '徐远宏:182****1688',
+                    '林浩:152****5317',
+                    '石钢锋:130****0661',
+                    '吴尚骏:182****8496',
+                    '廖剑:185****8610',
+                    '任毅:136****5789',
+                    '陶安杰:156****8862',
+                    '游国勋:176****1548',
+                    '刘帅:176****9919',
+                    '董瑞雪:187****4131',
+                    '曹文杰:158****8035',
+                    '王随鹏:152****3489',
+                    '李青青:185****6194',
+                    '马冲:153****3982',
+                    '吕成:152****8978',
+                    '邱武艺:182****6967',
+                    '韩雪:151****7730',
+                    '张佳辉:176****5721',
+                    '薛三峰:187****6647',
+                    '连丽君:159****8985',
+                    '卢标标:188****4106',
+                    '裴玮杰:183****0860',
+                    '张永锋:180****2626',
+                    '马冰:151****3380',
+                    '郑益泽:150****3605',
+                    '孙超:159****3438',
+                    '宛丹丹:188****0289',
+                    '吴杰:186****9655',
+                    '张苏:177****5084',
+                    '季锦章:136****5599'
+                ];
+
+                let ran = Math.floor(Math.random() * all.length);
+                let user = all[ran].split(':');
+                if (be.indexOf(all[ran]) !== -1) {
+                    rand();
+                } else {
+                    threeNames.push(user[0]);
+                    threePhones.push(user[1]);
+                }
+                all.remove(all[ran]);
+            }
+        })
+    })(axios);
+
+    // ---------------------------------------------------
+
+</script>
+
+</html>
